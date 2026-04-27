@@ -1,0 +1,19 @@
+### Query endpoint
+POST http://localhost:8000/query
+Content-Type: application/json
+X-User-ID: test-user
+
+{
+  "query": "how tall is a Llama? give single answer without explanation"
+}
+
+### Upload PDF
+POST http://localhost:8000/upload
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="sample.pdf"
+Content-Type: application/pdf
+
+< ./llama.pdf
+--boundary--
